@@ -70,14 +70,17 @@ public class ToDoEntryPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String titleText = titleTextField.getText(),
-                        descriptionText = descriptionTextField.getText();
+                        descriptionText = descriptionTextField.getText(),
+                        completeText = completeTextField.getText();
                 
-                if(titleText.isBlank() || descriptionText.isEmpty()) {
+                if(titleText.isBlank() || descriptionText.isEmpty() || completeText.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "TODO entry is empty", "Invalid Entry", JOptionPane.ERROR_MESSAGE);
                 }
                 else {
+                    int complete = Integer.parseInt(completeText);
+                    
                     // Create a new ToDo
-                    ToDo newToDo = new ToDo(titleText, descriptionText);
+                    ToDo newToDo = new ToDo(titleText, descriptionText, complete);
                     
                     for(SubmitToDoListener listener : submitToDoListeners) {
                         listener.newToDoEntry(newToDo);
@@ -86,6 +89,7 @@ public class ToDoEntryPanel extends JPanel {
                     // Clear the text fields
                     titleTextField.setText("");
                     descriptionTextField.setText("");
+                    completeTextField.setText("");
                 }
             }
         });
