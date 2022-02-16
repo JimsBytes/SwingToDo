@@ -55,6 +55,14 @@ public class ToDoEntryPanel extends JPanel {
         JTextField descriptionTextField = new JTextField("", 20);
         this.add(descriptionTextField);
         
+        JLabel completeLabel = new JLabel("Complete %");
+        completeLabel.setPreferredSize(new Dimension(200, 30));
+        completeLabel.setHorizontalAlignment(JLabel.CENTER);        
+        this.add(completeLabel);
+        
+        JTextField completeTextField = new JTextField("", 20);
+        this.add(completeTextField);
+        
         // Add a button
         JButton addButton = new JButton("Add");
         addButton.setPreferredSize(new Dimension(200, 30));
