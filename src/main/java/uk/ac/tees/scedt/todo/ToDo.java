@@ -18,6 +18,12 @@ public class ToDo {
         this.title = title;
         this.description = description;
     }
+    
+    public ToDo(String title, String description, int percent) {
+        this.title = title;
+        this.description = description;
+        this.percentageComplete = percent;
+    }
 
     public String getTitle() {
         return title;
