@@ -43,7 +43,12 @@ public class ToDoListingPanel extends JPanel implements SubmitToDoListener {
     public void newToDoEntry(ToDo newToDo) {
         String labelText =
                 String.format(
-                    "<html>ToDo Title: %s<br><br>%s<br><br>Complete %d%%</html>",
+                    "<html><body style='width=380px'>"
+                            + "ToDo Title: %s<br><br>"
+                            + "%s<br><br>"
+                            + "Complete %d%%"
+                            + "<hr>"
+                            + "</body></html>",
                     newToDo.getTitle(),
                     newToDo.getDescription(),
                     newToDo.getPercentageComplete());
